@@ -1,0 +1,32 @@
+go
+python -c "import sys; print(sys.executable)"
+python -c "import torch, open_clip, sklearn, PIL; print('imports ok')"
+
+
+
+dir C:\icip_osr\data\PACS
+
+==================样本测试=============
+cd /d C:\icip_osr\code
+
+python paper_run.py ^
+  --data_root C:\icip_osr\data\PACS ^
+  --unknown_k 2 ^
+  --num_splits 2 ^
+  --seeds 0
+=====================================
+
+
+cd /d C:\icip_osr\code
+
+python paper_run.py ^
+  --data_root C:\icip_osr\data\PACS ^
+  --unknown_k 2 ^
+  --num_splits 0 ^
+  --seeds 0,1,2 ^
+  --include_energy
+
+=========分析===================
+python paper_analyze_plus.py ^
+  --results_csv C:\icip_osr\code\results\20260104_123456\results.csv ^
+  --std sample

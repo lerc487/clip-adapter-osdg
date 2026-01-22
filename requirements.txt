@@ -1,0 +1,8 @@
+torch
+open_clip_torch
+scikit-learn
+numpy
+tqdm
+pillow
+pyyaml
+datasets
